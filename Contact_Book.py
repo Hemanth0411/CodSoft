@@ -15,7 +15,10 @@ def add_contact():
   print(f"Contact of {name} added successfully.\n")
 
 def view_contact_list():
-  pass
+  print("\nContacts List:\n")
+  for name, contact in contacts.items():
+    print(f"{name} - {contact['Phone Number']}")
+  print()
 
 def search_contact():
   pass
