@@ -37,7 +37,11 @@ def main():
     print("4.Update Contact")
     print("5.Delete Contact")
     print("6.Exit")
-    choice=int(input("Enter your choice(1-6): "))
+    try:
+      choice=int(input("Enter your choice(1-6): "))
+    except:
+      print("Invalid input. Make sure your choice is an integer and in range(1-6).")
+      continue
 
     if choice == 1:
       add_contact()
@@ -51,6 +55,8 @@ def main():
       delete_contact()
     elif choice == 6:
       break
+    else:
+      print("Invalid Choice. Choose between(1-6)!")
 
 if __name__=='__main__':
   main()
