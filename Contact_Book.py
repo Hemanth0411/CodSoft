@@ -1,6 +1,18 @@
 #TASK-6
+contacts={}
 def add_contact():
-  pass
+  name=input("Enter name: ")
+  phone_number=input("Enter phone number: ")
+  email=input("Enter E-mail: ")
+  address=input("Enter Address: ")
+
+  contact={
+    'Name':name,
+    'Phone Number' : phone_number,
+    'Email' : email,
+    'Address' : address}
+  contacts[name]=contact
+  print(f"Contact of {name} added successfully.\n")
 
 def view_contact_list():
   pass
