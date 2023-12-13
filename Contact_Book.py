@@ -1,4 +1,3 @@
-#TASK-6
 contacts={}
 def add_contact():
   name=input("Enter name: ")
@@ -12,7 +11,7 @@ def add_contact():
     'Email' : email,
     'Address' : address}
   contacts[name]=contact
-  print(f"Contact of {name} added successfully.\n")
+  print(f"Contact of {name} added successfully!\n")
 
 def view_contact_list():
   print("\nContacts List:\n")
@@ -21,7 +20,17 @@ def view_contact_list():
   print()
 
 def search_contact():
-  pass
+  query=input("Enter the Name or Phone Number to search: ").lower()
+  search_result=[]
+  for name, contact in contacts.items():
+    if query in name or query in contact['Phone Number']:
+      search_result.append((name, contact))
+  if search_result!=[]:
+    print("Search Results:\n")
+    for result in search_result:
+      print(f"{result[0]} - {result[1]['Phone Number']}")
+  else:
+      print("No matching Contact Found.\n")
 
 def update_contact():
   pass
@@ -56,7 +65,7 @@ def main():
     elif choice == 6:
       break
     else:
-      print("Invalid Choice. Choose between(1-6)!")
+      print("\nInvalid Choice. Choose between(1-6)!")
 
 if __name__=='__main__':
   main()
