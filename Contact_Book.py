@@ -1,7 +1,7 @@
 contacts={}
 def add_contact():
-  name=input("Enter name: ").title()
-  phone_number=input("Enter phone number: ")
+  name=input("Enter Name: ").title()
+  phone_number=input("Enter Phone Number: ")
   email=input("Enter E-mail: ")
   address=input("Enter Address: ")
 
@@ -33,10 +33,10 @@ def search_contact():
     for result in search_result:
       print(f"{result[0]} - {result[1]['Phone Number']}")
   else:
-      print("No matching Contact Found.\n")
+      print("No Matching Contact Found.\n")
 
 def update_contact():
-  query=input("Enter the name or phone number of the contact to update: ").title()
+  query=input("Enter the Name or Phone Number of the contact to update: ").title()
   for contact in contacts.values():
     if query in contact['Phone Number']:
       query=contact['Name']
@@ -49,12 +49,12 @@ def update_contact():
     contacts[query]['Phone Number']=input("Phone Number: ")
     contacts[query]['Email']=input("Email: ")
     contacts[query]['Address']=input("Address: ")
-    print("\nContact Details Updated Successfully.")
+    print("\nContact Details Updated Successfully!")
   else:
-    print("Contact not Found.")
+    print("Contact not found!")
 
 def delete_contact():
-  query=input("Enter the name or phone number of the contact to delete: ").title()
+  query=input("Enter the Name or Phone number of the contact to delete: ").title()
   for contact in contacts.values():
     if query in contact['Phone Number']:
       query=contact['Name']
