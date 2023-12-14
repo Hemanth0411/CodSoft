@@ -1,6 +1,6 @@
 contacts={}
 def add_contact():
-  name=input("Enter name: ")
+  name=input("Enter name: ").title()
   phone_number=input("Enter phone number: ")
   email=input("Enter E-mail: ")
   address=input("Enter Address: ")
@@ -15,12 +15,15 @@ def add_contact():
 
 def view_contact_list():
   print("\nContacts List:\n")
-  for name, contact in contacts.items():
-    print(f"{name} - {contact['Phone Number']}")
+  if contacts=={}:
+    print("Your contact list is empty.")
+  else:
+    for name, contact in contacts.items():
+      print(f"{name} - {contact['Phone Number']}")
   print()
 
 def search_contact():
-  query=input("Enter the Name or Phone Number to search: ").lower()
+  query=input("Enter the Name or Phone Number to search: ").title()
   search_result=[]
   for name, contact in contacts.items():
     if query in name or query in contact['Phone Number']:
@@ -33,10 +36,48 @@ def search_contact():
       print("No matching Contact Found.\n")
 
 def update_contact():
-  pass
+  query=input("Enter the name or phone number of the contact to update: ").title()
+  for contact in contacts.values():
+    if query in contact['Phone Number']:
+      query=contact['Name']
+  
+  if query in contacts.keys():
+    print("\nConatct details:\n")
+    print_contact_details(contacts[query])
+    print("\nUpdate Details:")
+    contacts[query]['Name']=input("Name: ")
+    contacts[query]['Phone Number']=input("Phone Number: ")
+    contacts[query]['Email']=input("Email: ")
+    contacts[query]['Address']=input("Address: ")
+    print("\nContact Details Updated Successfully.")
+  else:
+    print("Contact not Found.")
 
 def delete_contact():
-  pass 
+  query=input("Enter the name or phone number of the contact to delete: ").title()
+  for contact in contacts.values():
+    if query in contact['Phone Number']:
+      query=contact['Name']
+      
+  if query in contacts:
+    print("Contact Details: ")
+    print_contact_details(contacts[query])
+
+    confirm=input("\nAre you sure you want to delete the contact? (y/n): ").lower()
+    if confirm=='y':
+      del contacts[query]
+      print("Contact deleted Successfully!")
+    else:
+      print("Deletion Cancelled.")
+  else:
+    print("\nContact not Found.\n")
+
+def print_contact_details(contact):
+  print(f"Name = {contact['Name']}")
+  print(f"Phone Number = {contact['Phone Number']}")
+  print(f"E-Mail = {contact['Email']}")
+  print(f"Address = {contact['Address']}")
+
 
 def main():  
   while True:
