@@ -1,12 +1,20 @@
 #TaSK -1
 #TO-DO LIST 
 from tkinter import *
-
+from tkinter import messagebox
+def adding_task():
+    task=entry.get()
+    if task:
+        list_box.insert(END, task)
+        entry.delete(0, END)
+    else:
+        messagebox.showwarning("Warning!", "Please enter a task!")
+    
 root=Tk()
 root.title("To Do List")
 entry=Entry(root, font=("Arial",20))
 entry.grid(row=0, column=0,padx=10, pady=10,sticky="we")
-add_task=Button(root, text="Add Task", font=("Arial",16))
+add_task=Button(root, text="Add Task", font=("Arial",16), command=adding_task)
 add_task.grid(row=0, column=1,pady=10, sticky="we")
 list_box=Listbox(root, font=("Arial",20))
 list_box.grid(row=1, column=0, columnspan=2,padx=10, pady=10, sticky="nswe")
@@ -17,3 +25,4 @@ root.grid_columnconfigure(0, weight=1)
 
 
 root.mainloop()
+
