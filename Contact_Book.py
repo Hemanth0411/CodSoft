@@ -47,6 +47,7 @@ def update_contact():
   if query in contacts.keys():
     print("\nConatct details:\n")
     print_contact_details(contacts[query])
+    
     print("\nUpdate Details:")
     contacts[query]['Name']=input("Name: ")
     contacts[query]['Phone Number']=input("Phone Number: ")
