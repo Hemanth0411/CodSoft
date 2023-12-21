@@ -3,13 +3,18 @@
 
 def add(x, y):
   return x+y
+  
 def sub(x, y):
   return x-y
+  
 def mult(x, y):
   return x*y
+  
 def div(x, y):
   return x/y
+  
 choice=0
+
 while True:
   if choice==5:
     break
