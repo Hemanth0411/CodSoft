@@ -1,3 +1,6 @@
+#TASK - 4
+#Rock-Paper-Scissors Game
+
 import random
 
 game={
@@ -21,6 +24,8 @@ print("1.Rock\n2.Paper\n3.Scissors")
 user_choice=int(input("Your Choice: "))
 
 computer_choice = random.randint(1,3)
+
 result=decision(user_choice, computer_choice)
+
 print(f"Your Choice: {game[user_choice]} & Computer Choice: {game[computer_choice]}")
 print(result)
