@@ -31,6 +31,7 @@ def search_contact():
   for name, contact in contacts.items():
     if query in name or query in contact['Phone Number']:
       search_result.append((name, contact))
+  
   if search_result!=[]:
     print("Search Results:\n")
     for result in search_result:
@@ -40,6 +41,7 @@ def search_contact():
 
 def update_contact():
   query=input("Enter the Name or Phone Number of the contact to update: ").title()
+  
   for contact in contacts.values():
     if query in contact['Phone Number']:
       query=contact['Name']
@@ -54,6 +56,7 @@ def update_contact():
     contacts[query]['Email']=input("Email: ")
     contacts[query]['Address']=input("Address: ")
     print("\nContact Details Updated Successfully!")
+  
   else:
     print("Contact not found!")
 
