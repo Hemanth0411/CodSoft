@@ -22,6 +22,8 @@ def decision(user_choice, computer_choice):
     return "You Win!"
 
 yes = True
+print("Welcome to Rock-Paper-Scissors Game!!")
+
 while yes:
     while True:
         print("1.Rock\n2.Paper\n3.Scissors")
