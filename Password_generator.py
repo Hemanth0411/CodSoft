@@ -1,3 +1,6 @@
+#TASK - 3
+#PASSWORD GENERATOR
+
 import random 
 import string
 
