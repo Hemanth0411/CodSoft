@@ -1,18 +1,7 @@
 #TASK - 2
 #CALCULATOR
+  
 
-def add(x, y):
-  return x+y
-  
-def sub(x, y):
-  return x-y
-  
-def mult(x, y):
-  return x*y
-  
-def div(x, y):
-  return x/y
-  
 choice=0
 
 while True:
@@ -28,22 +17,22 @@ while True:
   
   while True:
     try:
-      print("\n1.Addition\n2.Subtaction\n3.Multiplication\n4.Division\n5.Exit")
+      print("\n1.Addition\n2.Subtaction\n3.Multiplication\n4.Division")
       choice=int(input("Enter your choice: "))
       if choice == 1:
-        print(f"{num1} + {num2} = {add(num1,num2)}")  
+        print(f"{num1} + {num2} = {num1+num2}")  
       elif choice == 2:
-        print(f"{num1} - {num2} = {sub(num1,num2)}")  
+        print(f"{num1} - {num2} = {num1-num2}")  
       elif choice == 3:
-        print(f"{num1} * {num2} = {mult(num1,num2)}")  
+        print(f"{num1} * {num2} = {num1*num2}")  
       elif choice == 4:
-        print(f"{num1} / {num2} = {div(num1,num2)}")
-      elif choice == 5:
-        break
+        print(f"{num1} / {num2} = {num1/num2}")
       else:
-        print("Invalid Choice. Please enter a number between 1-5. ")
+        print("Invalid Choice. Please enter a number between 1-4. ")
         continue
+      ch=input("\nWould you like to continue? (y/n): ").lower()
+      if ch!='y':choice=5
       break
     except:
-      print("Invalid Choice. Please choose a number between 1-5. ")
+      print("Invalid Choice. Please choose a number between 1-4. ")
       continue
