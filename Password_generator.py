@@ -37,6 +37,8 @@ while True:
   while generated:
     try:
       length=int(input("\nSpecify the length of the password to generate: "))
+      if length<=0:
+        print("Length of the password must be greater than zero!")
     except:
       print("Password length must be a number and greater than zero!")
       continue
