@@ -17,7 +17,7 @@ while True:
   
   while True:
     try:
-      print("\n1.Addition\n2.Subtaction\n3.Multiplication\n4.Division")
+      print("\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division")
       choice=int(input("Enter your choice: "))
       if choice == 1:
         print(f"{num1} + {num2} = {num1+num2}")  
